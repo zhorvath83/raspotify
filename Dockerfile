@@ -26,8 +26,8 @@ RUN apt update && \
     rm -rf /tmp/* && \
     rm -rf /var/tmp/*
 
-COPY equalizer.sh startup.sh /
-RUN chmod 755 /startup.sh && chmod 755 /equalizer.sh
+COPY startup.sh /
+RUN chmod 755 /startup.sh
 
 USER $USERNAME
 
