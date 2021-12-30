@@ -1,4 +1,4 @@
-FROM debian:10.11-slim
+FROM debian:11.2-slim
 
 ARG USERNAME=raspotify
 ARG USER_UID=1000
