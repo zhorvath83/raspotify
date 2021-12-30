@@ -2,7 +2,7 @@
 
 You can use this container to create a Spotify Speaker at your home, but you must have a Spotify Premium account.
 
-The process run is librespot, an open source client library for Spotify. This docker container image leverages the work from David Cooper.
+The process run is librespot, an open source client library for Spotify. This docker container image leverages the work from [David Cooper](https://dtcooper.github.io/raspotify).
 
 ## Usage
 
