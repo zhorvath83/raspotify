@@ -1,0 +1,20 @@
+name: ghcr-retention
+
+on:
+  schedule:
+    - cron: '0 0 1 * *' # At 00:00 on day-of-month 1.
+  workflow_dispatch:
+
+jobs:
+  cleanup-ghcr:
+    name: Delete old unused container images
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prune old GHCR images
+        uses: sondrelg/container-retention-policy@v1
+        with:
+          image-names: ${{ github.event.repository.name }}
+          cut-off: 8 weeks ago UTC
+          keep-at-least: 1
+          account-type: personal
+          token: ${{ secrets.PAT_4_PRUNE_GHCR }}

@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM debian:10.11-slim
 
 ARG USERNAME=raspotify
 ARG USER_UID=1000
@@ -7,15 +7,15 @@ ARG USER_GID=$USER_UID
 RUN groupadd --gid $USER_GID $USERNAME && \
     useradd --uid $USER_UID --gid $USER_GID -m $USERNAME && \
     usermod -a -G audio $USERNAME && \
-    apt-get update && \
-    apt-get install -y apt-transport-https ca-certificates curl gnupg && \
+    apt update && \
+    apt install -y apt-transport-https ca-certificates curl gnupg && \
     curl -kfsSL https://dtcooper.github.io/raspotify/key.asc | gpg --dearmor --yes -o /usr/share/keyrings/raspotify-archive-keyring.gpg && \
     echo 'deb [signed-by=/usr/share/keyrings/raspotify-archive-keyring.gpg] https://dtcooper.github.io/raspotify raspotify main' > /etc/apt/sources.list.d/raspotify.list && \
-    apt-get update && \
-    apt-get install -y --no-install-recommends \
+    apt update && \
+    apt install -y --no-install-recommends \
       alsa-utils libasound2-plugins libasound2-plugin-equal gettext \
       raspotify && \
-    apt-get clean && \
+    apt clean && \
     rm -rf /var/lib/apt/lists/*
 
 COPY equalizer.sh startup.sh /
@@ -33,6 +33,7 @@ ENV SPOTIFY_NAME='Raspotify speaker' \
     SPOTIFY_USER='' \
     SPOTIFY_PASS='' \
     SPOTIFY_BITRATE='' \
+    SPOTIFY_VOLUME_CONTROL='linear' \
     ENABLE_AUDIO_CACHE='false' \
     ENABLE_NORMALIZATION='false' \
     INITIAL_VOLUME='90' \

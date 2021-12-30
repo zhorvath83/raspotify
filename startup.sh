@@ -35,15 +35,19 @@ if [ "$DEVICE_NAME" != "" ]; then
 fi
 
 if [ "$SPOTIFY_USER" != "" ]; then
-  PARAMS+=(--SPOTIFY_USER $SPOTIFY_USER)
+  PARAMS+=(--username $SPOTIFY_USER)
 fi
 
 if [ "$SPOTIFY_PASS" != "" ]; then
-  PARAMS+=(--SPOTIFY_PASSword $SPOTIFY_PASS)
+  PARAMS+=(--password $SPOTIFY_PASS)
 fi
 
 if [ "$SPOTIFY_BITRATE" != "" ]; then
-  PARAMS+=(--SPOTIFY_BITRATE $SPOTIFY_BITRATE)
+  PARAMS+=(--bitrate $SPOTIFY_BITRATE)
+fi
+
+if [ "$SPOTIFY_VOLUME_CONTROL" != "" ]; then
+  PARAMS+=(--volume-ctrl $SPOTIFY_VOLUME_CONTROL)
 fi
 
 if [ "$ENABLE_AUDIO_CACHE" != "true" ]; then
