@@ -5,11 +5,6 @@ set -e
 
 echo "Preparing container..."
 
-if [ "$ALSA_EQUALIZATION" != "" ]; then
-  echo "Applying equalization '$ALSA_EQUALIZATION'"
-  /equalizer.sh "$ALSA_EQUALIZATION"
-fi
-
 PARAMS=()
 
 if [ "$LIBRESPOT_VERBOSE" == "true" ]; then

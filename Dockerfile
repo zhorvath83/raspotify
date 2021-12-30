@@ -43,7 +43,6 @@ ENV LIBRESPOT_DEVICE_NAME='Raspotify speaker' \
     SPOTIFY_VOLUME_CONTROL='linear' \
     ENABLE_AUDIO_CACHE='false' \
     ENABLE_NORMALIZATION='false' \
-    ALSA_EQUALIZATION=''
 
 FROM build-stage as final-stage
 
