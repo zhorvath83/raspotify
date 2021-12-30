@@ -19,10 +19,12 @@ RUN apt update && \
     echo 'deb [signed-by=/usr/share/keyrings/raspotify-archive-keyring.gpg] https://dtcooper.github.io/raspotify raspotify main' > /etc/apt/sources.list.d/raspotify.list && \
     apt update && \
     apt install -y --no-install-recommends \
-      alsa-utils libasound2-plugins libasound2-plugin-equal gettext \
-      raspotify && \
-    apt clean && \
-    rm -rf /var/lib/apt/lists/*
+      alsa-utils libasound2-plugins libasound2-plugin-equal gettext raspotify && \
+    apt purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false && \
+    apt autoclean -y && \
+    rm -rf /var/lib/apt/lists/* && \
+    rm -rf /tmp/* && \
+    rm -rf /var/tmp/*
 
 COPY equalizer.sh startup.sh /
 RUN chmod 755 /startup.sh && chmod 755 /equalizer.sh
