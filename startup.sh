@@ -5,10 +5,6 @@ set -e
 
 echo "Preparing container..."
 
-echo "/etc/asound.conf"
-cat /etc/asound.conf
-echo ' '
-
 if [ "$ALSA_EQUALIZATION" != "" ]; then
   echo "Applying equalization '$ALSA_EQUALIZATION'"
   /equalizer.sh "$ALSA_EQUALIZATION"

@@ -1,5 +1,7 @@
 FROM debian:11.2-slim as build-stage
 
+USER root
+
 ARG USERNAME=raspotify
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
@@ -8,7 +10,8 @@ RUN groupadd --gid $USER_GID $USERNAME && \
     useradd --uid $USER_UID --gid $USER_GID -m $USERNAME && \
     usermod -a -G audio $USERNAME && \
     apt update && \
-    apt install -y apt-transport-https ca-certificates curl gnupg && \
+    apt full-upgrade -y && \
+    apt install -y --no-install-recommends apt-transport-https ca-certificates curl gnupg && \
     curl -kfsSL https://dtcooper.github.io/raspotify/key.asc | gpg --dearmor --yes -o /usr/share/keyrings/raspotify-archive-keyring.gpg && \
     echo 'deb [signed-by=/usr/share/keyrings/raspotify-archive-keyring.gpg] https://dtcooper.github.io/raspotify raspotify main' > /etc/apt/sources.list.d/raspotify.list && \
     apt update && \
