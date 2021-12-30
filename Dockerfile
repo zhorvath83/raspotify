@@ -1,4 +1,4 @@
-FROM debian:11.2-slim
+FROM debian:11.2-slim as build-stage
 
 ARG USERNAME=raspotify
 ARG USER_UID=1000
@@ -36,5 +36,7 @@ ENV LIBRESPOT_DEVICE_NAME='Raspotify speaker' \
     ENABLE_AUDIO_CACHE='false' \
     ENABLE_NORMALIZATION='false' \
     ALSA_EQUALIZATION=''
+
+FROM build-stage as final-stage
 
 ENTRYPOINT /startup.sh

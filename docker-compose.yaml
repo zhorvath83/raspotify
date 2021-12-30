@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  raspotify:
+    container_name: raspotify
+    image: ghcr.io/zhorvath83/raspotify:1.0.3
+    network_mode: host
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    devices:
+      - /dev/snd:/dev/snd
+    environment:
+      LIBRESPOT_DEVICE_NAME: "Living room speaker"
+      LIBRESPOT_AUDIO_DEVICE: "hw:1,0"
+    restart: always
