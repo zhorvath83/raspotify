@@ -6,10 +6,13 @@ ARG USERNAME=raspotify
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 RUN groupadd --gid $USER_GID $USERNAME && \
     useradd --uid $USER_UID --gid $USER_GID -m $USERNAME && \
-    usermod -a -G audio $USERNAME && \
-    apt update && \
+    usermod -a -G audio $USERNAME
+
+RUN apt update && \
     apt full-upgrade -y && \
     apt install -y --no-install-recommends apt-transport-https ca-certificates curl gnupg && \
     curl -kfsSL https://dtcooper.github.io/raspotify/key.asc | gpg --dearmor --yes -o /usr/share/keyrings/raspotify-archive-keyring.gpg && \
