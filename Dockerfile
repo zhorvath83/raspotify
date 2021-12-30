@@ -23,20 +23,18 @@ RUN chmod 755 /startup.sh && chmod 755 /equalizer.sh
 
 USER $USERNAME
 
-ENV SPOTIFY_NAME='Raspotify speaker' \
-    BACKEND_NAME='alsa' \
-    DEVICE_NAME='equal' \
-    ALSA_EQUALIZATION='' \
-    ALSA_SLAVE_PCM='plughw:0,0' \
-    VERBOSE='false' \
-    EQUALIZATION='' \
+ENV LIBRESPOT_DEVICE_NAME='Raspotify speaker' \
+    LIBRESPOT_BACKEND_NAME='alsa' \
+    LIBRESPOT_AUDIO_DEVICE='' \
+    LIBRESPOT_INITIAL_VOLUME='90' \
+    LIBRESPOT_OPTS='' \
+    LIBRESPOT_VERBOSE='true' \
     SPOTIFY_USER='' \
     SPOTIFY_PASS='' \
-    SPOTIFY_BITRATE='' \
+    SPOTIFY_BITRATE='320' \
     SPOTIFY_VOLUME_CONTROL='linear' \
     ENABLE_AUDIO_CACHE='false' \
     ENABLE_NORMALIZATION='false' \
-    INITIAL_VOLUME='90' \
-    LIBRESPOT_OPTS=''
+    ALSA_EQUALIZATION=''
 
 ENTRYPOINT /startup.sh

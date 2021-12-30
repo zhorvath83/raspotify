@@ -16,22 +16,22 @@ fi
 
 PARAMS=()
 
-if [ "$VERBOSE" == "true" ]; then
+if [ "$LIBRESPOT_VERBOSE" == "true" ]; then
   PARAMS+=(-v)
 fi
 
-if [ "$SPOTIFY_NAME" == "" ]; then
-  SPOTIFY_NAME=Raspotify speaker
+if [ "$LIBRESPOT_DEVICE_NAME" == "" ]; then
+  LIBRESPOT_DEVICE_NAME=Raspotify speaker
 fi
-PARAMS+=(--name "$SPOTIFY_NAME")
+PARAMS+=(--name "$LIBRESPOT_DEVICE_NAME")
 
-if [ "$BACKEND_NAME" == "" ]; then
-  BACKEND_NAME=alsa
+if [ "$LIBRESPOT_BACKEND_NAME" == "" ]; then
+  LIBRESPOT_BACKEND_NAME=alsa
 fi
-PARAMS+=(--backend $BACKEND_NAME)
+PARAMS+=(--backend $LIBRESPOT_BACKEND_NAME)
 
-if [ "$DEVICE_NAME" != "" ]; then
-  PARAMS+=(--device $DEVICE_NAME)
+if [ "$LIBRESPOT_AUDIO_DEVICE" != "" ]; then
+  PARAMS+=(--device $LIBRESPOT_AUDIO_DEVICE)
 fi
 
 if [ "$SPOTIFY_USER" != "" ]; then
@@ -58,8 +58,8 @@ if [ "$ENABLE_NORMALIZATION" == "true" ]; then
   PARAMS+=(--enable-volume-normalisation)
 fi
 
-if [ "$INITIAL_VOLUME" != "" ]; then
-  PARAMS+=(--initial-volume $INITIAL_VOLUME)
+if [ "$LIBRESPOT_INITIAL_VOLUME" != "" ]; then
+  PARAMS+=(--initial-volume $LIBRESPOT_INITIAL_VOLUME)
 fi
 
 echo "Starting Raspotify..."
