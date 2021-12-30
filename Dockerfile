@@ -42,7 +42,7 @@ ENV LIBRESPOT_DEVICE_NAME='Raspotify speaker' \
     SPOTIFY_BITRATE='320' \
     SPOTIFY_VOLUME_CONTROL='linear' \
     ENABLE_AUDIO_CACHE='false' \
-    ENABLE_NORMALIZATION='false' \
+    ENABLE_NORMALIZATION='false'
 
 FROM build-stage as final-stage
 
