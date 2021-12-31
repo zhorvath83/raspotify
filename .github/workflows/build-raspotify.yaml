@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - 'main'
+    paths-ignore:
+      - 'README.md'
+      - 'docker-compose.yaml'
 
 jobs:
   building-raspotify:

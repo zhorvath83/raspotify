@@ -17,7 +17,6 @@ The process run is librespot, an open source client library for Spotify. This do
 * LIBRESPOT_DEVICE_NAME: Specifies the name of this speaker (shown in Spotify client)
 * LIBRESPOT_AUDIO_DEVICE: defined to a hardware (eg. "hw:0,0") to which the sound will be output using ALSA
 * LIBRESPOT_INITIAL_VOLUME: Initial volume in % from 0-100.
-* LIBRESPOT_OPTS: Additional Librespot opts.
 * LIBRESPOT_VERBOSE: Enable verbose output	
 * SPOTIFY_USER: Optional username used to sign in with.
 * SPOTIFY_PASS: Optional Password used to sign in with.
@@ -25,3 +24,4 @@ The process run is librespot, an open source client library for Spotify. This do
 * SPOTIFY_VOLUME_CONTROL: Volume control type cubic, fixed, linear, log. Defaults to linear.
 * ENABLE_AUDIO_CACHE: Enable/disable caching of the audio data.
 * ENABLE_NORMALIZATION: Enables volume normalisation for librespot.
+* LIBRESPOT_OPTS: Additional Librespot opts according to [Librespot documentation](https://github.com/librespot-org/librespot/wiki/Options).
