@@ -9,7 +9,7 @@ The process run is librespot, an open source client library for Spotify. This do
 * Download docker-compose.yaml
 * Run `docker-compose up -d`
 * Open Spotify App and click on a speaker icon (Connect to a device)
-* Select the speaker "Raspotify speaker"
+* Select the "Raspotify speaker"
 * Enjoy!
 
 ## ENVs
