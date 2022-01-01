@@ -7,7 +7,7 @@ on:
 
 jobs:
   cleanup-ghcr:
-    name: Delete old unused container images
+    name: Delete old container images
     runs-on: ubuntu-latest
     steps:
       - name: Prune old GHCR images
@@ -15,6 +15,7 @@ jobs:
         with:
           image-names: ${{ github.event.repository.name }}
           cut-off: 8 weeks ago UTC
+          timestamp-to-use: updated_at
           keep-at-least: 1
           account-type: personal
           token: ${{ secrets.PAT_4_PRUNE_GHCR }}
