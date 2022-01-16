@@ -16,6 +16,6 @@ jobs:
           image-names: ${{ github.event.repository.name }}
           cut-off: 8 weeks ago UTC
           timestamp-to-use: updated_at
-          keep-at-least: 1
+          keep-at-least: 2
           account-type: personal
           token: ${{ secrets.PAT_4_PRUNE_GHCR }}
