@@ -59,6 +59,13 @@
       "automergeType": "pr",
       "matchUpdateTypes": ["minor", "patch"],
       "matchPackagePatterns": [".*"]
+    },
+    {
+      "matchDatasources": ["docker"],
+      "versioning": "loose",
+      "matchPackageNames": [
+      "debian"
+      ]
     }
   ]
 }
