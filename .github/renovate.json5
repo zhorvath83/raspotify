@@ -62,7 +62,7 @@
     },
     {
       "matchDatasources": ["docker"],
-      "versioning": "loose",
+      "versioning": "debian",
       "matchPackageNames": [
       "debian"
       ]
