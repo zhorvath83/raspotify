@@ -16,8 +16,9 @@ The process run is librespot, an open source client library for Spotify. This do
 
 * LIBRESPOT_DEVICE_NAME: Specifies the name of this speaker (shown in Spotify client)
 * LIBRESPOT_AUDIO_DEVICE: defined to a hardware (eg. "hw:0,0") to which the sound will be output using ALSA
+    ** Listing available devices on docker host: aplay -l
 * LIBRESPOT_INITIAL_VOLUME: Initial volume in % from 0-100.
-* LIBRESPOT_VERBOSE: Enable verbose output	
+* LIBRESPOT_VERBOSE: Enable verbose output
 * SPOTIFY_USER: Optional username used to sign in with.
 * SPOTIFY_PASS: Optional Password used to sign in with.
 * SPOTIFY_BITRATE: Bitrate (kbps): 96, 160, 320. Defaults to 320.
