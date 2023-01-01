@@ -1,4 +1,4 @@
-FROM debian:11.3-slim as build-stage
+FROM debian:11.6-slim as build-stage
 
 USER root
 
