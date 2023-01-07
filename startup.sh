@@ -53,5 +53,9 @@ if [ "$LIBRESPOT_INITIAL_VOLUME" != "" ]; then
   PARAMS+=(--initial-volume $LIBRESPOT_INITIAL_VOLUME)
 fi
 
+if [ "$LIBRESPOT_VERBOSE_LOGGING" != "true" ]; then
+  PARAMS+=(--verbose)
+fi
+
 echo "Starting Raspotify..."
 /usr/bin/librespot "${PARAMS[@]}" $LIBRESPOT_OPTS
