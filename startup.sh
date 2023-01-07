@@ -7,8 +7,8 @@ echo "Preparing container..."
 
 PARAMS=()
 
-if [ "$LIBRESPOT_VERBOSE" == "true" ]; then
-  PARAMS+=(-v)
+if [ "$LIBRESPOT_VERBOSE_LOGGING" != "true" ]; then
+  PARAMS+=(--verbose)
 fi
 
 if [ "$LIBRESPOT_DEVICE_NAME" == "" ]; then
@@ -51,10 +51,6 @@ fi
 
 if [ "$LIBRESPOT_INITIAL_VOLUME" != "" ]; then
   PARAMS+=(--initial-volume $LIBRESPOT_INITIAL_VOLUME)
-fi
-
-if [ "$LIBRESPOT_VERBOSE_LOGGING" != "true" ]; then
-  PARAMS+=(--verbose)
 fi
 
 echo "Starting Raspotify..."
