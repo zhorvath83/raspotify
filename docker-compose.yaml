@@ -3,7 +3,7 @@ version: "3.8"
 services:
   raspotify:
     container_name: raspotify
-    image: ghcr.io/zhorvath83/raspotify:1.0.27
+    image: ghcr.io/zhorvath83/raspotify:1.0.33
     network_mode: host
     security_opt:
       - no-new-privileges:true
