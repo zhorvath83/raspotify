@@ -13,5 +13,5 @@ services:
       - /dev/snd:/dev/snd
     environment:
       LIBRESPOT_DEVICE_NAME: "Living room speaker"
-      LIBRESPOT_AUDIO_DEVICE: "hw:1,0"
+      #LIBRESPOT_AUDIO_DEVICE: "hw:1,0"
     restart: always
