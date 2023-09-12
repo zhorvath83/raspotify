@@ -41,7 +41,7 @@ jobs:
 
       - name: Build stage
         id: docker_build_stage
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v5
         with:
           context: ./
           target: build-stage
@@ -53,7 +53,7 @@ jobs:
 
       - name: Build and push final-stage
         id: docker_build_final_stage
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v5
         with:
           context: ./
           target: final-stage
